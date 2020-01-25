@@ -1,16 +1,15 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="utf8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>My first VR site</title>
     <link rel="stylesheet" type="text/css" href="./css/webvr01.css">
+    <script src="https://aframe.io/releases/latest/aframe.min.js"></script>
+    <script src="./js/webvr01.js"></script>
   </head>
   <body>
-    <script src="./js/three.min.js"></script>
-    <script src="./js/VRControls.js"></script>
-    <script src="./js/VREffect.js"></script>
-    <script src="./js/webvr-polyfill.js"></script>
-    <script src="./js/webvr-manager.js"></script>
-    <script src="./js/webvr01.js"></script>
+    <a-scene>
+      <!-- ここにシーンに追加するオブジェクトを記述していきます -->
+      <a-model src="./model/low-poly-mill.obj"></a-model>
+    </a-scene>
   </body>
 </html>
