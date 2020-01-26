@@ -7,9 +7,24 @@
     <script src="./js/webvr01.js"></script>
   </head>
   <body>
+
+    <a-assets>
+      <a-asset-item id="low-poly-mill-obj" src="./model/low-poly-mill.obj"></a-asset-item>
+      <a-asset-item id="low-poly-mill-mtl" src="./model/low-poly-mill.mtl"></a-asset-item>
+    </a-assets>
+
     <a-scene>
+
+      <a-camera position="0 1.8 4"
+        cursor-visible="true"
+        cursor-scale="2"
+        cursor-color="#4CC3D9"
+        cursor-offset="2"
+        cursor-maxdistance="100"
+        cursor-opacity="0.5">
+      </a-camera>
       <!-- ここにシーンに追加するオブジェクトを記述していきます -->
-      <a-model src="./model/low-poly-mill.obj"></a-model>
+      <a-obj-model position="0 0.5 -5" src="#low-poly-mill-obj" mtl="#low-poly-mill-mtl"></a-obj-model>
     </a-scene>
   </body>
 </html>
