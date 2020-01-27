@@ -4,15 +4,18 @@
     <title>My first VR site</title>
     <link rel="stylesheet" type="text/css" href="./css/webvr01.css">
     <script src="https://aframe.io/releases/latest/aframe.min.js"></script>
-    <script src="./js/aframe-extras.min.js"></script>
-    <script src="./js/webvr01.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v5.0.0/dist/aframe-extras.min.js"></script>
+    <!--<script src="./js/aframe-extras.min.js"></script>
+    <script src="./js/webvr01.js"></script>-->
   </head>
   <body>
 
     <a-scene>
 
+      <a-sky color="#CDCDCD"></a-sky>
+
       <a-assets>
-        <a-asset-item id="low-poly-mill-obj" src="low-poly-mill.glb"></a-asset-item>
+        <a-asset-item id="obj" src="low-poly-mill.glb"></a-asset-item>
       </a-assets>
 
       <a-camera position="0 8 24" fov="60">
@@ -55,12 +58,12 @@
       </a-camera>
       <!-- ここにシーンに追加するオブジェクトを記述していきます -->
 
-      <a-entity id="vr">
-        <a-cube position="3 0.5 4" width="1.5" height="3.0" depth="0.5" color="red"></a-cube>
+      <a-cube position="3 0.5 4" width="1.5" height="3.0" depth="0.5" color="red"></a-cube>
+      <!--<a-entity id="vr">
         <a-gltf-model position="5 0.5 4" src="url(low-poly-mill.gltf)"></a-gltf-model>
-      </a-entity>
-      <!--<a-entity gltf-model="#low-poly-mill-obj" visible="true" scale="4 4 4"></a-entity>-->
-      <a-sky color="#CDCDCD"></a-sky>
+      </a-entity>-->
+      <a-entity gltf-model="#obj"></a-entity>
+
     </a-scene>
   </body>
 </html>
