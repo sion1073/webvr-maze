@@ -17,7 +17,7 @@
 
       <a-camera position="0 8 24" fov="60">
         <a-cursor color="black" scale="2 2" fuse="true">
-          <a-animation
+          <!--<a-animation
             begin="click"
             easing="ease-out"
             attribute="scale"
@@ -26,7 +26,7 @@
             to="1 1 1"
             dur="300">
           </a-animation>
-          <!--<a-animation
+          <a-animation
             begin="mouseenter"
             attribute="color"
             fill="forwards"
@@ -56,8 +56,8 @@
       <!-- ここにシーンに追加するオブジェクトを記述していきます -->
 
       <a-entity id="vr">
-        <a-cube class="cube" width="1.5" height="3.0" depth="0.5" color="red"></a-cube>
-        <a-obj-model src="#low-poly-mill-obj" mtl="#low-poly-mill-mtl"></a-obj-model>
+        <a-cube position="3 0.5 4" width="1.5" height="3.0" depth="0.5" color="red"></a-cube>
+        <a-obj-model position="0 0.5 0" src="#low-poly-mill-obj" mtl="#low-poly-mill-mtl"></a-obj-model>
       </a-entity>
       <a-sky color="#ECECEC"></a-sky>
     </a-scene>
