@@ -28,8 +28,9 @@
       <!-- ここにシーンに追加するオブジェクトを記述していきます -->
 
       <!--<a-cube width="1.5" height="3.0" depth="0.5" color="red"></a-cube>-->
-      <!--<a-obj-model src="./model/low-poly-mill.obj" mtl="./model/low-poly-mill.mtl"></a-obj-model>-->
-      <a-entity obj-model="obj: #low-poly-mill-obj; mtl: #low-poly-mill-mtl"></a-entity>
+      <a-entity id="vr" position="0 1 0">
+        <a-obj-model src="#low-poly-mill-obj" mtl="#low-poly-mill-mtl"></a-obj-model>
+      </a-entity>
       <a-sky color="#ECECEC"></a-sky>
     </a-scene>
   </body>
