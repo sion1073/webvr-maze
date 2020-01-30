@@ -1,25 +1,31 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="utf8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="./css/webvr02.css">
+    <title>My first VR site</title>
+    <link rel="stylesheet" type="text/css" href="./css/end.css">
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
   </head>
   <body>
-    <div id="container">
 
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <a-scene>
 
-    <script src="./js/three.min.js"></script>
-    <script src="./js/MTLLoader.js"></script>
-    <script src="./js/OBJLoader.js"></script>
+      <a-sky color="#CDCDCD"></a-sky>
 
-    <script src="./js/VRControls.js"></script>
-    <script src="./js/VREffect.js"></script>
-    <script src="./js/webvr-polyfill.js"></script>
-    <script src="./js/webvr-manager.js"></script>
+      <a-assets>
+        <a-asset-item id="low-poly-mill" src="./model/low-poly-mill.gltf"></a-asset-item>
+      </a-assets>
 
-    <script src="./js/webvr02.js"></script>
-    </div>
+      <a-camera position="-20 80 150" fov="60">
+        <a-cursor color="black" scale="2 2" fuse="true" fuse-timeout="1000" >
+        </a-cursor>
+      </a-camera>
+
+      <a-entity class="obj" gltf-model="#low-poly-mill" rotation="0 50 0"></a-entity>
+
+      <a-text class="start" position="-20 20 100" value="> CLEAR !! <" color="red" width="800"></a-text>
+
+    </a-scene>
+
+    <script src="./js/end.js"></script>
   </body>
 </html>
