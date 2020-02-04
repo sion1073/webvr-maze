@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <title>My first VR site</title>
+    <link rel="stylesheet" type="text/css" href="./css/end.css">
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+  </head>
+  <body>
+
+    <a-scene>
+
+      <a-sky color="#CDCDCD"></a-sky>
+
+      <a-assets>
+        <a-asset-item id="low-poly-mill" src="./model/low-poly-mill.gltf"></a-asset-item>
+      </a-assets>
+
+      <a-camera position="-20 80 150" fov="60">
+        <a-cursor color="black" scale="2 2" fuse="true" fuse-timeout="1000" >
+        </a-cursor>
+      </a-camera>
+
+      <a-entity class="obj" gltf-model="#low-poly-mill" rotation="0 50 0"></a-entity>
+
+      <a-text class="start" position="-20 20 100" value="> CLEAR !! <" color="red" width="800"></a-text>
+
+    </a-scene>
+
+    <script src="./js/end.js"></script>
+  </body>
+</html>
