@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <title>My first VR site</title>
+    <link rel="stylesheet" type="text/css" href="./css/webvr01.css">
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+  </head>
+  <body>
+
+    <a-scene>
+
+      <a-sky color="#CDCDCD"></a-sky>
+
+      <a-assets>
+        <a-asset-item id="low-poly-mill" src="low-poly-mill.gltf"></a-asset-item>
+      </a-assets>
+
+      <a-camera position="-20 80 150" fov="60">
+        <a-cursor color="black" scale="2 2" fuse="true" fuse-timeout="1000" >
+          <a-animation
+            begin="mouseenter"
+            easing="ease-out"
+            attribute="scale"
+            fill="forwards"
+            from="2 2 2"
+            to="1 1 1"
+            dur="300">
+          </a-animation>
+          <a-animation
+            begin="mouseenter"
+            attribute="color"
+            fill="forwards"
+            from="black"
+            to="red"
+            dur="0">
+          </a-animation>
+          <a-animation
+            begin="mouseleave"
+            easing="ease-in"
+            attribute="scale"
+            fill="forwards"
+            from="1 1 1"
+            to="2 2 2"
+            dur="300">
+          </a-animation>
+          <a-animation
+            begin="mouseleave"
+            attribute="color"
+            fill="forwards"
+            from="red"
+            to="black"
+            dur="0">
+          </a-animation>
+        </a-cursor>
+      </a-camera>
+      <!-- ここにシーンに追加するオブジェクトを記述していきます -->
+
+      <a-entity class="obj" gltf-model="#low-poly-mill" rotation="0 50 0"></a-entity>
+
+    </a-scene>
+
+    <script src="./js/webvr01.js"></script>
+  </body>
+</html>
