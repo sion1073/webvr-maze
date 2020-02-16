@@ -12,13 +12,13 @@
       <a-sky color="#CDCDCD"></a-sky>
 
       <a-assets>
-        <a-asset-item id="Room" src="./model/EmptyRoom.gltf"></a-asset-item>
-        <a-asset-item id="door" src="./model/door.gltf"></a-asset-item>
-        <a-asset-item id="room-obj" src="./model/EmptyRoom.obj"></a-asset-item>
-        <a-asset-item id="room-mtl" src="./model/EmptyRoom(OBJ).mtl"></a-asset-item>
+        <a-asset-item id="Room" src="./model/room2/EmptyRoom.gltf"></a-asset-item>
+        <a-asset-item id="door" src="./model/room2/door.gltf"></a-asset-item>
+        <a-asset-item id="room-obj" src="./model/room2/EmptyRoom.obj"></a-asset-item>
+        <a-asset-item id="room-mtl" src="./model/room2/EmptyRoom(OBJ).mtl"></a-asset-item>
       </a-assets>
 
-      <a-camera position="0 5 0" fov="60">
+      <a-camera position="0 1 0" fov="60">
         <a-cursor color="black" scale="2 2" fuse="true" fuse-timeout="1000" >
           <a-animation
             begin="mouseenter"
@@ -57,7 +57,7 @@
         </a-cursor>
       </a-camera>
 
-      <a-entity obj-model="obj:#room-obj; mtl:#room-mtl;" position="0 0 0"></a-entity>
+      <a-entity obj-model="obj:#room-obj; mtl:#room-mtl;" position="0 0 0" scale-"2 2 2"></a-entity>
       <!--<a-entity position="0 0 0" gltf-model="#Room"></a-entity>
       <a-entity class="door" position="-5 0 0" gltf-model="#door"></a-entity>
       <a-cube class="box" width="1.0" height="1.0" depth="0.5" color="red"></a-cube>
