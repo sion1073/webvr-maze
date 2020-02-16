@@ -13,7 +13,7 @@
 
       <a-assets>
         <a-asset-item id="Room" src="./model/EmptyRoom.gltf"></a-asset-item>
-        <a-asset-item id="Room" src="./model/door.gltf"></a-asset-item>
+        <a-asset-item id="door" src="./model/door.gltf"></a-asset-item>
       </a-assets>
 
       <a-camera position="0 0 0" fov="60">
@@ -56,9 +56,9 @@
       </a-camera>
 
       <a-entity position="0 0 0" gltf-model="#Room"></a-entity>
-      <a-entity class="door" position="-5 0 0" gltf-model="#Room"></a-entity>
-      <a-cube class="box" width="1.5" height="3.0" depth="0.5" color="red"></a-cube>
-      <a-cube class="box" width="1.5" height="3.0" depth="0.5" color="red"></a-cube>
+      <a-entity class="door" position="-5 0 0" gltf-model="#door"></a-entity>
+      <a-cube class="box" width="1.0" height="1.0" depth="0.5" color="red"></a-cube>
+      <a-cube class="box" width="1.0" height="1.0" depth="0.5" color="red"></a-cube>
 
     </a-scene>
 
