@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>My first VR site</title>
-    <link rel="stylesheet" type="text/css" href="./css/start.css">
     <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
   </head>
   <body>
@@ -22,33 +21,35 @@
         </a-cursor>
       </a-camera>
 
-      <a-entity obj-model="obj:#room-obj; mtl:#room-mtl;" scale="2 2 2" position="0 0 0"></a-entity>
+      <a-entity obj-model="obj:#room-obj; mtl:#room-mtl;" scale="2 1 2" position="0 0 0"></a-entity>
 
-      <a-entity id="exit" position="-1.818 0.193 -6.509" gltf-model="#door" scale="0.025 0.002 -0.025" rotation="90 90 90"></a-entity>
+      <a-entity id="exit" position="-1.818 0.146 -6.509" gltf-model="#door" scale="0.025 0.002 -0.02" rotation="90 90 90"></a-entity>
       <a-entity
         id="exit_error"
-        position="-1.818 0.193 -6.509"
-        geometry="primitive: plane; width: 5"
+        position="-1.735 2.745 -6.131"
+        visible="false"
+        geometry="primitive: plane; height: 0.5; width: 2"
         material="color: #EF2D5E"
         text="color: white; align: center; font: dejavu;
-              value: Hello, World 006;">
+              value: you don't have key;">
       </a-entity>
 
-      <a-box id="box1" position="-1.771 1.234 -5.537" scale="2.531 2.073 0.500" color="#4CC3D9"></a-cube>
-      <a-box id="box2" position="-1.771 1.234 -5.537" scale="2.531 2.073 0.500" color="#4CC3D9"></a-cube>
+      <a-box id="box1" position="6.993 1.902 -2.263" scale="0.641 3.509 1.657" color="#4CC3D9"></a-box>
+      <a-box id="button" position="7.268 1.535 -2.392" scale="0.235 0.191 0.193" color="#4CC3D9"></a-box>
 
-      <a-box id="button" position="-1.771 1.234 -5.537" scale="2.531 2.073 0.500" color="#4CC3D9"></a-cube>
-      <a-box id="key_box" position="-1.771 1.234 -5.537" scale="2.531 2.073 0.500" color="#4CC3D9"></a-cube>
+      <a-box id="key_box" position="5.174 22.880 -0.125" scale="1.154 1.023 0.983" color="#4CC3D9"></a-box>
       <a-entity
         id="key_get"
-        position="-1.818 0.193 -6.509"
-        geometry="primitive: plane; width: 5"
+        position="7.167 2.185 0.049"
+        rotation="0 270 0"
+        visible="false"
+        geometry="primitive: plane; height: 0.5; width: 2"
         material="color: #EF2D5E"
         text="color: white; align: center; font: dejavu;
-              value: Hello, World 006;">
+              value: key get!!;">
       </a-entity>
     </a-scene>
 
-    <script src="./js/start.js"></script>
+    <script src="./js/room02.js"></script>
   </body>
 </html>

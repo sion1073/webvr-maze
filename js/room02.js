@@ -4,20 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
 ​
   var exit = "false";
 ​
-  // 特定のオブジェクトを見てメッセージを表示させる処理
-  var box = document.querySelector('.box');
-  box.addEventListener('click', function() {
-      var checked = document.querySelector('#checked');
-      checked.setAttribute('visible','true');
-
-      setTimeout(
-        function () {
-          checked.setAttribute('visible','false');
-        },
-        "3000"
-      );
-  }, false);
-​
   // 鍵を見つける処理
   var key = document.querySelector('#key_box');
   key.addEventListener('click', function() {
