@@ -1,7 +1,10 @@
-var linkElements = document.getElementsByClassName("start");
-for (var i = 0; i < linkElements.length; i++) {
-  linkElements[i].addEventListener('click', function() {
-    console.log("watch");
-    location.href = "https://webvr-maze.herokuapp.com/room02.html";
+'use strict';
+​
+document.addEventListener('DOMContentLoaded', function() {
+​​
+  // 特定のオブジェクトを見てメッセージを表示させる処理
+  var start = document.querySelector('#start');
+  start.addEventListener('click', function() {
+      location.href = "https://webvr-maze.herokuapp.com/room02.html";
   }, false);
-}
+});

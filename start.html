@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>My first VR site</title>
-    <link rel="stylesheet" type="text/css" href="./css/start.css">
     <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
   </head>
   <body>
@@ -16,48 +15,14 @@
       </a-assets>
 
       <a-camera position="-20 80 150" fov="60">
-        <a-cursor color="black" scale="2 2" fuse="true" fuse-timeout="1000" >
-          <a-animation
-            begin="mouseenter"
-            easing="ease-out"
-            attribute="scale"
-            fill="forwards"
-            from="2 2 2"
-            to="1 1 1"
-            dur="300">
-          </a-animation>
-          <a-animation
-            begin="mouseenter"
-            attribute="color"
-            fill="forwards"
-            from="black"
-            to="red"
-            dur="0">
-          </a-animation>
-          <a-animation
-            begin="mouseleave"
-            easing="ease-in"
-            attribute="scale"
-            fill="forwards"
-            from="1 1 1"
-            to="2 2 2"
-            dur="300">
-          </a-animation>
-          <a-animation
-            begin="mouseleave"
-            attribute="color"
-            fill="forwards"
-            from="red"
-            to="black"
-            dur="0">
-          </a-animation>
+        <a-cursor color="black" scale="1 1 1" fuse="true" fuse-timeout="2000" >
         </a-cursor>
       </a-camera>
 
-      <a-entity class="obj" position="-42 95 50" gltf-model="#low-poly-mill" rotation="0 55 0"></a-entity>
+      <a-entity position="-42 95 50" gltf-model="#low-poly-mill" rotation="0 55 0"></a-entity>
 
-      <a-text class="title" position="-42 95 100" value="Web VR MAZE" color="red" width="150"></a-text>
-      <a-text class="start" position="-38 75 100" value="> GAME START !! <" color="red" width="100"></a-text>
+      <a-text position="-42 95 100" value="Web VR MAZE" color="red" width="150"></a-text>
+      <a-text id="start" position="-38 75 100" value="> GAME START !! <" color="red" width="100"></a-text>
 
     </a-scene>
 
