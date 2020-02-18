@@ -1,5 +1,6 @@
 'use strict';
 ​
+// 各要素にイベント付与
 document.addEventListener('DOMContentLoaded', function() {
 ​​
   // 特定のオブジェクトを見てメッセージを表示させる処理
