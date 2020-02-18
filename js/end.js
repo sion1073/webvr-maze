@@ -25,7 +25,7 @@ function init (){
     renderer.setClearColor(0x00bfff, 1);
     //renderer.shadowMapEnabled = true;
     document.getElementById('container').appendChild(renderer.domElement);
-    
+
     ambient = new THREE.AmbientLight(0xffffff);
     scene.add(ambient);
 
@@ -42,7 +42,7 @@ function init (){
     //camera
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.set(0, 0, 450);
-    
+
     var mtlLoader = new THREE.MTLLoader();
     mtlLoader.setTexturePath( './model/' );
     mtlLoader.setPath( './model/' );
@@ -66,9 +66,9 @@ function init (){
             scene.add(loadedMesh);
         });
     });
-    
+
     document.body.appendChild(renderer.domElement);
-    
+
     controls = new THREE.VRControls(camera);
     controls.standing = true;
 
