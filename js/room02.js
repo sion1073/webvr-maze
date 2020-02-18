@@ -2,7 +2,7 @@
 
 // 各要素にイベント付与​
 document.addEventListener('DOMContentLoaded', function() {
-​
+
   var exit = "false";
 
   var box = document.querySelector('#box');
@@ -46,14 +46,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var move_no = document.querySelector('#move_no');
     move_no.setAttribute('visible','false');
   }, false);
-​
+
   // 鍵を見つける処理
   var key = document.querySelector('#key_box');
   key.addEventListener('click', function() {
     // メッセージを表示
     var key_get = document.querySelector('#key_get');
     key_get.setAttribute('visible','true');
-​
+
     exit = "true";
 
     // 3秒後にメッセージを非表示に変更
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
     key.emit('start_key_box')
 
   }, false);
-​
+
   var exit = document.querySelector('#exit');
   exit.addEventListener('click', function() {
     // 鍵を持っている場合
