@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Wev VR MAZE</title>
+    <title>Web VR MAZE</title>
     <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
   </head>
   <body>
@@ -37,7 +37,7 @@
         id="exit_error"
         position="-1.735 2.745 -6.131"
         visible="false"
-        geometry="primitive: plane; height: 0.5; width: 2"
+        geometry="primitive: plane; height: 0.5; width: 3"
         material="color: #EF2D5E"
         text="color: white; align: center;
               width: 6; font: dejavu;
@@ -46,14 +46,14 @@
 
       <a-box
         id="box"
-        position="6.993 1.902 -2.263"
+        position="6.993 1.902 -0.159"
         scale="0.641 3.509 1.657"
         color="#4CC3D9">
         <a-animation
           begin="start_box"
           attribute="position"
-          from="6.993 1.902 -2.263"
-          to="6.993 1.902 -3.45"
+          from="6.993 1.902 -0.159"
+          to="6.993 1.902 -1.885"
           delay="1000"
           dur="1500"
           fill="forwards"
@@ -62,7 +62,7 @@
       </a-box>
       <a-entity
         id="move_question"
-        position="6.461 2.185 -2.234"
+        position="6.461 2.565 -0.134"
         rotation="0 270 0"
         visible="false"
         geometry="primitive: plane; height: 0.5; width: 2"
@@ -73,7 +73,7 @@
       </a-entity>
       <a-entity
         id="move_yes"
-        position="6.461 1.691 -2.788"
+        position="6.461 2.073 -0.631"
         rotation="0 270 0"
         visible="false"
         geometry="primitive: plane; height: 0.5; width: 1"
@@ -84,7 +84,7 @@
       </a-entity>
       <a-entity
         id="move_no"
-        position="6.461 1.691 -1.733"
+        position="6.461 2.073 0.363"
         rotation="0 270 0"
         visible="false"
         geometry="primitive: plane; height: 0.5; width: 1"
@@ -95,7 +95,7 @@
       </a-entity>
       <a-box
         id="button"
-        position="7.268 1.535 -2.392"
+        position="7.268 1.535 -0.122"
         scale="0.235 0.191 0.193"
         color="#4CC3D9">
       </a-box>
@@ -118,7 +118,7 @@
       </a-box>
       <a-entity
         id="key_get"
-        position="7.167 1 0.049"
+        position="4.083 0.725 -1.612"
         rotation="0 270 0"
         visible="false"
         geometry="primitive: plane; height: 0.5; width: 2"
