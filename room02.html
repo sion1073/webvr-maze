@@ -16,7 +16,41 @@
       </a-assets>
 
       <a-camera position="0 1 0" fov="60">
-        <a-cursor color="black" scale="1 1 1" fuse="true" fuse-timeout="2000" >
+        <a-cursor id="cursor" color="black" scale="2 2 2" fuse="true" fuse-timeout="1500" >
+          <a-animation
+            begin="cursor_over"
+            easing="ease-out"
+            attribute="scale"
+            fill="forwards"
+            from="2 2 2"
+            to="1 1 1"
+            dur="300">
+          </a-animation>
+          <a-animation
+            begin="cursor_over"
+            attribute="color"
+            fill="forwards"
+            from="black"
+            to="red"
+            dur="0">
+          </a-animation>
+          <a-animation
+            begin="cursor_leave"
+            easing="ease-in"
+            attribute="scale"
+            fill="forwards"
+            from="1 1 1"
+            to="2 2 2"
+            dur="300">
+          </a-animation>
+          <a-animation
+            begin="cursor_leave"
+            attribute="color"
+            fill="forwards"
+            from="red"
+            to="black"
+            dur="0">
+          </a-animation>
         </a-cursor>
       </a-camera>
 
@@ -54,7 +88,6 @@
           attribute="position"
           from="6.993 1.902 -0.159"
           to="6.993 1.902 -1.885"
-          delay="1000"
           dur="1500"
           fill="forwards"
           repeat="0">
@@ -81,6 +114,24 @@
         text="color: white; align: center;
               width: 6; font: dejavu;
               value: Yes;">
+        <a-animation
+          begin="mouseenter"
+          attribute="material.color"
+          from="#43FF6B"
+          to="#FF3333"
+          dur="100"
+          fill="forwards"
+          repeat="0">
+        </a-animation>
+        <a-animation
+          begin="mouseleave"
+          attribute="material.color"
+          from="#FF3333"
+          to="#43FF6B"
+          dur="100"
+          fill="forwards"
+          repeat="0">
+        </a-animation>
       </a-entity>
       <a-entity
         id="move_no"
@@ -92,6 +143,24 @@
         text="color: white; align: center;
               width: 6; font: dejavu;
               value: No;">
+        <a-animation
+          begin="mouseenter"
+          attribute="material.color"
+          from="#43FF6B"
+          to="#FF3333"
+          dur="100"
+          fill="forwards"
+          repeat="0">
+        </a-animation>
+        <a-animation
+          begin="mouseleave"
+          attribute="material.color"
+          from="#FF3333"
+          to="#43FF6B"
+          dur="100"
+          fill="forwards"
+          repeat="0">
+        </a-animation>
       </a-entity>
       <a-box
         id="button"
@@ -110,7 +179,6 @@
           attribute="position"
           from="5.174 22.880 -0.125"
           to="5.174 0.608 -0.125"
-          delay="1000"
           dur="1500"
           fill="forwards"
           repeat="0">

@@ -14,7 +14,41 @@
       </a-assets>
 
       <a-camera position="-20 80 150" fov="60">
-        <a-cursor color="black" scale="1 1 1" fuse="true" fuse-timeout="2000" >
+        <a-cursor id="cursor" color="black" scale="2 2 2" fuse="true" fuse-timeout="1500" >
+          <a-animation
+            begin="cursor_over"
+            easing="ease-out"
+            attribute="scale"
+            fill="forwards"
+            from="2 2 2"
+            to="1 1 1"
+            dur="300">
+          </a-animation>
+          <a-animation
+            begin="cursor_over"
+            attribute="color"
+            fill="forwards"
+            from="black"
+            to="red"
+            dur="0">
+          </a-animation>
+          <a-animation
+            begin="cursor_leave"
+            easing="ease-in"
+            attribute="scale"
+            fill="forwards"
+            from="1 1 1"
+            to="2 2 2"
+            dur="300">
+          </a-animation>
+          <a-animation
+            begin="cursor_leave"
+            attribute="color"
+            fill="forwards"
+            from="red"
+            to="black"
+            dur="0">
+          </a-animation>
         </a-cursor>
       </a-camera>
 
