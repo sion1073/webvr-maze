@@ -13,6 +13,11 @@
         <a-asset-item id="door" src="./model/room2/door.gltf"></a-asset-item>
         <a-asset-item id="room-obj" src="./model/room2/EmptyRoom.obj"></a-asset-item>
         <a-asset-item id="room-mtl" src="./model/room2/EmptyRoom(OBJ).mtl"></a-asset-item>
+
+        <a-asset-item id="drawer" src="./model/room2/drawer.gltf"></a-asset-item>
+        <a-asset-item id="chest_of_drawers" src="./model/room2/chest_of_drawers.gltf"></a-asset-item>
+        <a-asset-item id="round_table" src="./model/room2/round_table.gltf"></a-asset-item>
+        <a-asset-item id="Tactile_buffet" src="./model/room2/Tactile_buffet.gltf"></a-asset-item>
       </a-assets>
 
       <a-camera position="0 1 0" fov="60">
@@ -163,6 +168,17 @@
         </a-animation>
       </a-entity>
       <a-box
+        position="6.993 4.902 -0.159"
+        scale="0.641 3.509 1.657"
+        color="#4CC3D9">
+      </a-box>
+      <a-box
+        position="6.993 7.902 -0.159"
+        scale="0.641 3.509 1.657"
+        color="#4CC3D9">
+      </a-box>
+
+      <a-box
         id="button"
         position="7.268 1.535 -0.122"
         scale="0.235 0.191 0.193"
@@ -196,6 +212,31 @@
               value: key get!!;">
       </a-entity>
     </a-scene>
+
+    <a-entity
+      gltf-model="#drawer"
+      position="-1.818 0.146 -6.509"
+      scale="0.025 0.002 -0.02"
+      rotation="90 90 90">
+    </a-entity>
+    <a-entity
+      gltf-model="#chest_of_drawers"
+      position="-1.818 0.146 -6.509"
+      scale="0.025 0.002 -0.02"
+      rotation="90 90 90">
+    </a-entity>
+    <a-entity
+      gltf-model="#round_table"
+      position="-1.818 0.146 -6.509"
+      scale="0.025 0.002 -0.02"
+      rotation="90 90 90">
+    </a-entity>
+    <a-entity
+      gltf-model="#Tactile_buffet"
+      position="-1.818 0.146 -6.509"
+      scale="0.025 0.002 -0.02"
+      rotation="90 90 90">
+    </a-entity>
 
     <script src="./js/room02.js"></script>
   </body>
