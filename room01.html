@@ -1,64 +1,215 @@
-<!doctype html>
 <html>
   <head>
-    <title>My first VR site</title>
-    <link rel="stylesheet" type="text/css" href="./css/webvr01.css">
+    <title>Web VR MAZE</title>
     <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
   </head>
   <body>
-
-    <a-scene>
-
-      <a-sky color="#CDCDCD"></a-sky>
-
-      <a-assets>
-        <a-asset-item id="low-poly-mill" src="low-poly-mill.gltf"></a-asset-item>
-      </a-assets>
-
-      <a-camera position="-20 80 150" fov="60">
-        <a-cursor color="black" scale="2 2" fuse="true" fuse-timeout="1000" >
-          <a-animation
-            begin="mouseenter"
-            easing="ease-out"
-            attribute="scale"
-            fill="forwards"
-            from="2 2 2"
-            to="1 1 1"
-            dur="300">
-          </a-animation>
-          <a-animation
-            begin="mouseenter"
-            attribute="color"
-            fill="forwards"
-            from="black"
-            to="red"
-            dur="0">
-          </a-animation>
-          <a-animation
-            begin="mouseleave"
-            easing="ease-in"
-            attribute="scale"
-            fill="forwards"
-            from="1 1 1"
-            to="2 2 2"
-            dur="300">
-          </a-animation>
-          <a-animation
-            begin="mouseleave"
-            attribute="color"
-            fill="forwards"
-            from="red"
-            to="black"
-            dur="0">
-          </a-animation>
+    <a-scene 
+      inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
+      <a-camera 
+        position="0 1 0" 
+        fov="60">
+        <a-cursor 
+          id="cursor" 
+          color="black" 
+          scale="2 2 2" 
+          fuse="true" 
+          fuse-timeout="1500" >
         </a-cursor>
+        <a-text 
+          id="txt" 
+          position="0.1 0.2 -1" 
+          value="" 
+          color="black"
+          font="kelsonsans"
+          scale="0.5 0.5 0.5">
+        </a-text>
+        <a-entity 
+          id="key" 
+          position="0.53683 0 -4.6709" 
+          rotation="0 0 20" 
+          visible="false">
+          <a-cylinder 
+            position="" 
+            radius="0.08" 
+            height="1" 
+            color="#B8860B">
+          </a-cylinder>
+          <a-torus 
+            position="0 0.6 0" 
+            radius="0.2" 
+            radius-tubular="0.05" 
+            color="#B8860B">
+          </a-torus>
+          <a-box 
+            position="-0.12 -0.2 0" 
+            scale="0.1 0.1 0.1" 
+            color="#B8860B">
+          </a-box>
+          <a-box 
+            position="-0.12 -0.4 0" 
+            scale="0.1 0.1 0.1" 
+            color="#B8860B">
+          </a-box>
+          </a-entity>
       </a-camera>
-      <!-- ここにシーンに追加するオブジェクトを記述していきます -->
-
-      <a-entity class="obj" gltf-model="#low-poly-mill" rotation="0 50 0"></a-entity>
-
+      <a-box  
+        static-body 
+        scale="1 10 30" 
+        position="-14.5 2.5 0" 
+        color="#fce2c4">
+      </a-box>
+      <a-box 
+        static-body 
+        scale="1 10 25" 
+        position="14.5 2.5 2.5" 
+        color="#fce2c4">
+      </a-box>
+      <a-box 
+        static-body 
+        scale="30 10 1" 
+        position="0 2.5 -14.5" 
+        color="#fce2c4">
+      </a-box>
+      <a-box 
+        static-body 
+        scale="30 10 1" 
+        position="0 2.5 14.5" 
+        color="#fce2c4">
+      </a-box>
+      <a-box 
+        id="next_door" 
+        static-body 
+        scale="1 10 4" 
+        position="14.5 2.5 -12" 
+        color="#006400">
+      </a-box>
+      <a-plane 
+        static-body 
+        rotation="-90 0 0" 
+        width="30" 
+        height="30"
+        color="#85403A">
+      </a-plane>
+      <a-sphere 
+        id="sphere_a" 
+        position="5.28729 2.95116 -2.74059" 
+        radius="0.5" 
+        color="#EF2D5E" 
+        material="" 
+        geometry="">
+      </a-sphere>
+      <a-sphere 
+        id="sphere_b" 
+        position="5.28729 1.31565 3.17936" 
+        radius="0.5" 
+        color="black">
+      </a-sphere>
+      <a-sphere 
+        id="sphere_c" 
+        position="-1.85037 2.9068 3.88632" 
+        radius="0.5" 
+        color="yellow">
+      </a-sphere>
+      <a-sphere 
+        id="sphere_d" 
+        position="-2.71558 2.95116 -1.06997" 
+        radius="0.5" 
+        color="green">
+      </a-sphere>
+      <a-sphere 
+        id="sphere_e" 
+        position="0.52108 2.95116 -2.74059" 
+        radius="0.5" 
+        color="orange">
+      </a-sphere>
+      <a-cylinder 
+        position="-2.76354 2 -5" 
+        radius="0.5" 
+        height="1" 
+        color="black" 
+        material="" 
+        geometry="">
+      </a-cylinder>
+      <a-cylinder 
+        position="1 2 -5" 
+        radius="0.3" 
+        height="2" 
+        color="green">
+      </a-cylinder>
+      <a-cylinder 
+        position="5.6738 3 -1.96279"
+        radius="0.2" 
+        height="0.5" 
+        color="red" 
+        material="" 
+        geometry="">
+      </a-cylinder>
+      <a-cylinder 
+        position="-3.09174 2.02708 4.89198" 
+        radius="0.2" 
+        height="0.5" 
+        color="blue" 
+        material="" 
+        geometry="">
+      </a-cylinder>
+      <a-cylinder 
+        position="0 3 -5" 
+        radius="0.2" 
+        height="0.5" 
+        color="pink">
+      </a-cylinder>
+      <a-cone 
+        id="cone_a" 
+        position="-2.26986 0.32431 -5.12867" 
+        height="2" 
+        color="yellow" 
+        material="" 
+        geometry="">
+      </a-cone>
+      <a-cone 
+        id="cone_b" 
+        position="2.87983 0.27619 -4.54171" 
+        height="1" 
+        color="red" 
+        material="" 
+        geometry="">
+      </a-cone>
+      <a-cone 
+        id="cone_c" 
+        position="4.52499 0.6771 -0.49654" 
+        height="3" 
+        color="blue" 
+        material="" 
+        geometry="">
+      </a-cone>
+      <a-cone 
+        id="cone_d" 
+        position="2.10924 1.53917 6.09632" 
+        height="3" 
+        color="green" 
+        geometry="">
+      </a-cone>
+      <a-cone 
+        id="cone_e" 
+        position="-5.54722 0.69949 3.25013" 
+        height="3" 
+        color="pink" 
+        geometry="">
+      </a-cone>
+      <a-entity 
+        geometry="primitive:torus;radiusTubular:0.1;segmentsTubular:12" 
+        rotation="10 0 0" 
+        position="-4.03263 1.13143 -3.52718">
+      </a-entity>
+      <a-sky 
+        id="sky" 
+        color="#223a70">
+      </a-sky>
+      <a-assets>
+        <audio id="door_open" src="./sound/door_open.mp3"></audio>
+      </a-assets>
     </a-scene>
-
-    <script src="./js/webvr01.js"></script>
+    <script src="./js/room01.js"></script>
   </body>
 </html>
