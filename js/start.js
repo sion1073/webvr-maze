@@ -15,6 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
     cursor.emit('cursor_leave')
   }, false);
   start.addEventListener('click', function() {
-    location.href = "https://webvr-maze.herokuapp.com/room02.html";
+    location.href = "https://webvr-maze.herokuapp.com/room01.html";
   }, false);
 });
