@@ -1,3 +1,3 @@
-# webvr_test
+# webvr-maze
 
-Web-VR機能テストリポジトリ
+Web-VR（A-Frame）を使用したVR脱出ゲーム

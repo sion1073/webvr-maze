@@ -1,24 +1,26 @@
 <!doctype html>
 <html>
   <head>
-    <title>My first VR site</title>
-    <link rel="stylesheet" type="text/css" href="./css/webvr01.css">
+    <title>Web VR MAZE</title>
     <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
   </head>
   <body>
 
     <a-scene>
-
-      <a-sky color="#CDCDCD"></a-sky>
+      <a-sky color="#77EEFF"></a-sky>
 
       <a-assets>
-        <a-asset-item id="low-poly-mill" src="low-poly-mill.gltf"></a-asset-item>
+        <a-asset-item id="door" src="./model/room2/door.gltf"></a-asset-item>
+        <a-asset-item id="drawer" src="./model/room2/drawer.gltf"></a-asset-item>
+        <a-asset-item id="chest_of_drawers" src="./model/room2/chest_of_drawers.gltf"></a-asset-item>
+        <a-asset-item id="round_table" src="./model/room2/round_table.gltf"></a-asset-item>
+        <a-asset-item id="Tactile_buffet" src="./model/room2/Tactile_buffet.gltf"></a-asset-item>
       </a-assets>
 
-      <a-camera position="-20 80 150" fov="60">
-        <a-cursor color="black" scale="2 2" fuse="true" fuse-timeout="1000" >
+      <a-camera position="0 1 0" fov="60">
+        <a-cursor id="cursor" color="black" scale="2 2 2" fuse="true" fuse-timeout="1500" >
           <a-animation
-            begin="mouseenter"
+            begin="cursor_over"
             easing="ease-out"
             attribute="scale"
             fill="forwards"
@@ -27,7 +29,7 @@
             dur="300">
           </a-animation>
           <a-animation
-            begin="mouseenter"
+            begin="cursor_over"
             attribute="color"
             fill="forwards"
             from="black"
@@ -35,7 +37,7 @@
             dur="0">
           </a-animation>
           <a-animation
-            begin="mouseleave"
+            begin="cursor_leave"
             easing="ease-in"
             attribute="scale"
             fill="forwards"
@@ -44,7 +46,7 @@
             dur="300">
           </a-animation>
           <a-animation
-            begin="mouseleave"
+            begin="cursor_leave"
             attribute="color"
             fill="forwards"
             from="red"
@@ -53,12 +55,187 @@
           </a-animation>
         </a-cursor>
       </a-camera>
-      <!-- ここにシーンに追加するオブジェクトを記述していきます -->
 
-      <a-entity class="obj" gltf-model="#low-poly-mill" rotation="0 50 0"></a-entity>
+      <a-plane src="./img/room2/wall.jpg" position="0 0 7" scale="15 15 15" rotation="0 180 0"></a-plane>
+      <a-plane src="./img/room2/wall.jpg" position="7 0 0" scale="15 15 15" rotation="0 270 0"></a-plane>
+      <a-plane src="./img/room2/wall.jpg" position="0 0 -7" scale="15 15 15"></a-plane>
+      <a-plane src="./img/room2/wall.jpg" position="-7 0 0" scale="15 15 15" rotation="0 90 0"></a-plane>
+      <a-plane src="./img/room2/floor.jpg" position="0 0 0" scale="15 15 15" rotation="270 0 0"></a-plane>
 
+      <a-entity
+        id="exit"
+        gltf-model="#door"
+        position="-1.818 0 -7"
+        scale="0.03 0.003 -0.025"
+        rotation="90 90 90">
+      </a-entity>
+      <a-entity
+        id="exit_error"
+        position="-1.735 2.745 -6.131"
+        visible="false"
+        geometry="primitive: plane; height: 0.5; width: 3"
+        material="color: #FF3333"
+        text="color: white; align: center;
+              width: 6; font: dejavu;
+              value: you don't have key;">
+      </a-entity>
+
+      <a-box
+        id="box"
+        position="6.65 1.8 -0.159"
+        scale="0.641 3.509 1.657"
+        src="./img/room2/books.png">
+        <a-animation
+          begin="start_box"
+          attribute="position"
+          from="6.65 1.8 -0.159"
+          to="6.65 1.8 -1.885"
+          dur="1500"
+          fill="forwards"
+          repeat="0">
+        </a-animation>
+      </a-box>
+      <a-entity
+        id="move_question"
+        position="5.96 2.565 -0.134"
+        rotation="0 270 0"
+        visible="false"
+        geometry="primitive: plane; height: 0.5; width: 2"
+        material="color: #43FF6B"
+        text="color: white; align: center;
+              width: 6; font: dejavu;
+              value: Move??;">
+      </a-entity>
+      <a-entity
+        id="move_yes"
+        position="5.96 2.073 -0.631"
+        rotation="0 270 0"
+        visible="false"
+        geometry="primitive: plane; height: 0.5; width: 1"
+        material="color: #43FF6B"
+        text="color: white; align: center;
+              width: 6; font: dejavu;
+              value: Yes;">
+        <a-animation
+          begin="mouseenter"
+          attribute="material.color"
+          from="#43FF6B"
+          to="#FF3333"
+          dur="100"
+          fill="forwards"
+          repeat="0">
+        </a-animation>
+        <a-animation
+          begin="mouseleave"
+          attribute="material.color"
+          from="#FF3333"
+          to="#43FF6B"
+          dur="100"
+          fill="forwards"
+          repeat="0">
+        </a-animation>
+      </a-entity>
+      <a-entity
+        id="move_no"
+        position="5.96 2.073 0.363"
+        rotation="0 270 0"
+        visible="false"
+        geometry="primitive: plane; height: 0.5; width: 1"
+        material="color: #43FF6B"
+        text="color: white; align: center;
+              width: 6; font: dejavu;
+              value: No;">
+        <a-animation
+          begin="mouseenter"
+          attribute="material.color"
+          from="#43FF6B"
+          to="#FF3333"
+          dur="100"
+          fill="forwards"
+          repeat="0">
+        </a-animation>
+        <a-animation
+          begin="mouseleave"
+          attribute="material.color"
+          from="#FF3333"
+          to="#43FF6B"
+          dur="100"
+          fill="forwards"
+          repeat="0">
+        </a-animation>
+      </a-entity>
+      <a-box
+        position="6.65 1.8 1.538"
+        scale="0.641 3.509 1.657"
+        src="./img/room2/books.png">
+      </a-box>
+      <a-box
+        position="6.65 1.8 3.237"
+        scale="0.641 3.509 1.657"
+        src="./img/room2/books.png">
+      </a-box>
+
+      <a-cylinder
+        id="button"
+        position="6.99 1.535 -0.122"
+        scale="0.2 0.01 0.2"
+        rotation="0 0 90"
+        src="./img/room2/button.png">
+      </a-cylinder>
+
+      <a-box
+        id="key_box"
+        position="5.174 22.880 -0.125"
+        scale="1.154 1.023 0.983"
+        src="./img/room2/question.jpg">
+        <a-animation
+          begin="start_key_box"
+          attribute="position"
+          from="5.174 22.880 -0.125"
+          to="5.174 0.608 -0.125"
+          dur="1500"
+          fill="forwards"
+          repeat="0">
+        </a-animation>
+      </a-box>
+      <a-entity
+        id="key_get"
+        position="4.083 0.725 -1.612"
+        rotation="0 270 0"
+        visible="false"
+        geometry="primitive: plane; height: 0.5; width: 2"
+        material="color: #43FF6B"
+        text="color: white; align: center;
+              width: 6; font: dejavu;
+              value: key get!!;">
+      </a-entity>
+
+      <a-entity
+        gltf-model="#drawer"
+        position="-0.224 0 5.769"
+        scale="0.5 0.5 0.5"
+        rotation="0 180 0">
+      </a-entity>
+      <a-entity
+        gltf-model="#chest_of_drawers"
+        position="-6.773 -0.025 2"
+        scale="0.05 0.05 0.05"
+        rotation="0 270 0">
+      </a-entity>
+      <a-entity
+        gltf-model="#round_table"
+        position="-2.884 0 -0.854"
+        scale="0.5 0.5 0.5"
+        rotation="0 0 0">
+      </a-entity>
+      <a-entity
+        gltf-model="#Tactile_buffet"
+        position="-3.638 0 6.234"
+        scale="0.025 0.025 0.025"
+        rotation="0 180 0">
+      </a-entity>
     </a-scene>
 
-    <script src="./js/webvr01.js"></script>
+    <script src="./js/room02.js"></script>
   </body>
 </html>
