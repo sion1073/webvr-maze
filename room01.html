@@ -4,8 +4,7 @@
     <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
   </head>
   <body>
-    <a-scene 
-      inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
+    <a-scene>
       <a-camera 
         position="0 1 0" 
         fov="60">
@@ -19,7 +18,7 @@
         <a-text 
           id="txt" 
           position="0.1 0.2 -1" 
-          value="" 
+          value="Let's look at \n five of \n the identical object!" 
           color="black"
           font="kelsonsans"
           scale="0.5 0.5 0.5">
@@ -96,8 +95,7 @@
         position="5.28729 2.95116 -2.74059" 
         radius="0.5" 
         color="#EF2D5E" 
-        material="" 
-        geometry="">
+        animation="property: rotation; from: 5.28729 2.95116 -2.74059; to: 0 0 360; dir: alternate; dur: 1000; loop: true; easing: easeInOutSine">
       </a-sphere>
       <a-sphere 
         id="sphere_b" 
@@ -117,71 +115,42 @@
         radius="0.5" 
         color="green">
       </a-sphere>
-      <a-sphere 
-        id="sphere_e" 
-        position="0.52108 2.95116 -2.74059" 
-        radius="0.5" 
-        color="orange">
-      </a-sphere>
-      <a-cylinder 
-        position="-2.76354 2 -5" 
-        radius="0.5" 
-        height="1" 
-        color="black" 
-        material="" 
-        geometry="">
-      </a-cylinder>
-      <a-cylinder 
-        position="1 2 -5" 
-        radius="0.3" 
-        height="2" 
-        color="green">
-      </a-cylinder>
-      <a-cylinder 
-        position="5.6738 3 -1.96279"
-        radius="0.2" 
-        height="0.5" 
-        color="red" 
-        material="" 
-        geometry="">
-      </a-cylinder>
-      <a-cylinder 
-        position="-3.09174 2.02708 4.89198" 
-        radius="0.2" 
-        height="0.5" 
-        color="blue" 
-        material="" 
-        geometry="">
-      </a-cylinder>
-      <a-cylinder 
-        position="0 3 -5" 
-        radius="0.2" 
-        height="0.5" 
-        color="pink">
-      </a-cylinder>
+      <a-entity>
+          <a-sphere 
+            id="sphere_e" 
+            position="0.52108 2.95116 -2.74059" 
+            radius="0.5" 
+            color="orange">
+          </a-sphere>
+          <a-animation  attribute="position"
+                        dur="3000"
+                        to="0 0.5 0"
+                        repeat="indefinite"
+                        direction="alternate">
+      </a-entity>
+      <a-entity 
+        id="icos_a" 
+        position="4.44794 2.90533 5.00019" 
+        color="yellow" 
+        geometry="primitive:torusKnot;radius:1.2">
+      </a-entity>
       <a-cone 
         id="cone_a" 
         position="-2.26986 0.32431 -5.12867" 
         height="2" 
-        color="yellow" 
-        material="" 
-        geometry="">
+        color="yellow">
       </a-cone>
       <a-cone 
         id="cone_b" 
-        position="2.87983 0.27619 -4.54171" 
+        position="5.2252 0.30902 -7.29706" 
         height="1" 
-        color="red" 
-        material="" 
-        geometry="">
+        color="red">
       </a-cone>
       <a-cone 
         id="cone_c" 
-        position="4.52499 0.6771 -0.49654" 
+        position="4.34686 0.35054 0.56061" 
         height="3" 
-        color="blue" 
-        material="" 
-        geometry="">
+        color="blue">
       </a-cone>
       <a-cone 
         id="cone_d" 
@@ -198,9 +167,33 @@
         geometry="">
       </a-cone>
       <a-entity 
+        id="torus_a" 
+        geometry="primitive:torus;radiusTubular:0.1;segmentsTubular:12" 
+        rotation="10 0 0" 
+        position="2 4 3">
+      </a-entity>
+      <a-entity 
+        id="torus_b" 
+        geometry="primitive:torus;radiusTubular:0.1;segmentsTubular:12" 
+        rotation="10 0 0" 
+        position="-0.10573 2.41583 6.15154">
+      </a-entity>
+      <a-entity 
+        id="torus_c" 
+        geometry="primitive:torus;radiusTubular:0.1;segmentsTubular:12" 
+        rotation="10 0 0" 
+        position="-1.13905 2.03243 -6.3431">
+      </a-entity>
+      <a-entity
+        id="torus_d" 
         geometry="primitive:torus;radiusTubular:0.1;segmentsTubular:12" 
         rotation="10 0 0" 
         position="-4.03263 1.13143 -3.52718">
+        <a-animation  attribute="position"
+                        dur="3000"
+                        to="0 0.5 0"
+                        repeat="indefinite"
+                        direction="alternate">
       </a-entity>
       <a-sky 
         id="sky" 
