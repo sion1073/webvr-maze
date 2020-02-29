@@ -9,12 +9,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var go_next = "false";
 
-  var changeValue = function() {
+  // カウント数更新
+  var change_count = function() {
     sphere_str = "sphere : " + figure_status.sphere 
     cone_str = "cone : " + figure_status.cone 
-    txt.setAttribute("value", sphere_str + "," + cone_str);
+    torus_str = "torus : " + figure_status.torus
+    txt.setAttribute("value", sphere_str + ",\n" + cone_str + ",\n" + torus_str);
   };
 
+  // key表示
   var visible_key = function(figure_count) {
     if (figure_count > 4){
       key.setAttribute("visible", "true");
@@ -23,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
       go_next = "true";
     }
   }
-  
+
   // 球体
   const sphere_status = {a : false, b : false, c : false, d : false, e : false}
   var sphere_a = document.querySelector('#sphere_a');
@@ -31,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (sphere_status.a != true) {
       figure_status.sphere += 1
       console.log(figure_status.sphere)
-      changeValue();
+      change_count();
       visible_key(figure_status.sphere);
       sphere_status.a = true;
     }
@@ -42,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (sphere_status.b != true) {
       figure_status.sphere += 1
       console.log(figure_status.sphere)
-      changeValue();
+      change_count();
       visible_key(figure_status.sphere);
       sphere_status.b = true;
     }
@@ -53,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (sphere_status.c != true) {
       figure_status.sphere += 1
       console.log(figure_status.sphere)
-      changeValue();
+      change_count();
       visible_key(figure_status.sphere);
       sphere_status.c = true;
     }
@@ -64,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (sphere_status.d != true) {
       figure_status.sphere += 1
       console.log(figure_status.sphere)
-      changeValue();
+      change_count();
       visible_key(figure_status.sphere);
       sphere_status.d = true;
     }
@@ -75,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (sphere_status.e != true) {
       figure_status.sphere += 1
       console.log(figure_status.sphere)
-      changeValue();
+      change_count();
       visible_key(figure_status.sphere);
       sphere_status.e = true;
     }
@@ -88,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (cone_status.a != true) {
       figure_status.cone += 1
       console.log(figure_status.cone)
-      changeValue();
+      change_count();
       visible_key(figure_status.cone);
       cone_status.a = true;
     }
@@ -99,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (cone_status.b != true) {
       figure_status.cone += 1
       console.log(figure_status.cone)
-      changeValue();
+      change_count();
       visible_key(figure_status.cone);
       cone_status.b = true;
     }
@@ -110,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (cone_status.c != true) {
       figure_status.cone += 1
       console.log(figure_status.cone)
-      changeValue();
+      change_count();
       visible_key(figure_status.cone);
       cone_status.c = true;
     }
@@ -121,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (cone_status.d != true) {
       figure_status.cone += 1
       console.log(figure_status.cone)
-      changeValue();
+      change_count();
       visible_key(figure_status.cone);
       cone_status.d = true;
     }
@@ -132,19 +135,65 @@ document.addEventListener('DOMContentLoaded', function() {
     if (cone_status.e != true) {
       figure_status.cone += 1
       console.log(figure_status.cone)
-      changeValue();
+      change_count();
       visible_key(figure_status.cone);
       cone_status.e = true;
     }
   }, false);
   
+    // 円環
+    const torus_status = {a : false, b : false, c : false, d : false, e : false}
+    var torus_a = document.querySelector('#torus_a');
+    torus_a.addEventListener('mouseenter', function() {
+      if (torus_status.a != true) {
+        figure_status.torus += 1
+        console.log(figure_status.torus)
+        change_count();
+        visible_key(figure_status.torus);
+        torus_status.a = true;
+      }
+    }, false);
+  
+    var torus_b = document.querySelector('#torus_b');
+    torus_b.addEventListener('mouseenter', function() {
+      if (torus_status.b != true) {
+        figure_status.torus += 1
+        console.log(figure_status.torus)
+        change_count();
+        visible_key(figure_status.torus);
+        torus_status.b = true;
+      }
+    }, false);
+  
+    var torus_c = document.querySelector('#torus_c');
+    torus_c.addEventListener('mouseenter', function() {
+      if (torus_status.c != true) {
+        figure_status.torus += 1
+        console.log(figure_status.torus)
+        change_count();
+        visible_key(figure_status.torus);
+        torus_status.c = true;
+      }
+    }, false);
+  
+    var torus_d = document.querySelector('#torus_d');
+    torus_d.addEventListener('mouseenter', function() {
+      if (torus_status.d != true) {
+        figure_status.torus += 1
+        console.log(figure_status.torus)
+        change_count();
+        visible_key(figure_status.torus);
+        torus_status.d = true;
+      }
+    }, false);
+
   var next_door = document.querySelector('#next_door');
   next_door.addEventListener('mouseenter', function() {
     if (go_next == "true"){
       document.getElementById("door_open").play();
-      location.href ="https://webvr-maze.herokuapp.com/room02.html"
-    } else {
-      console.log("NG maze")
+      setTimeout(function() {
+        location.replace('https://webvr-maze.herokuapp.com/room02.html');
+      }, 3000);
     }
   }, false);
 });
